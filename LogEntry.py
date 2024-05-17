@@ -1,3 +1,5 @@
+import json
+
 class LogEntry:
     def __init__(self, projectId, experimentName, logMessage, logDetails=""):
         self.projectId = projectId
@@ -12,7 +14,7 @@ class LogEntry:
             'log_message' : self.logMessage,
             'log_details' : self.logDetails
         }
-        return returnable
+        return json.dumps(returnable)
     
 
 if __name__ == '__main__':
