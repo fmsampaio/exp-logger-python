@@ -19,7 +19,7 @@ class LogEntry:
 
 if __name__ == '__main__':
     entry = LogEntry(
-        projectId = 1,
+        projectId = 2,
         experimentName= "RA_Video_22_NDP",
         logMessage="Starting execution"
     )

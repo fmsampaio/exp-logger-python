@@ -5,7 +5,7 @@ from LogEntry import LogEntry
 
 BASE_API_URL = 'https://exp-logger-api-5bed46122227.herokuapp.com'
 
-def log(logEntry):
+def logEntry(logEntry):
     jsonData = logEntry.toJson()
 
     response = requests.post(
@@ -16,19 +16,19 @@ def log(logEntry):
     return response.status_code == 201
 
 def log(projectId, experimentName, logMessage, logDetails=""):
-    logEntry = LogEntry(
+    entry = LogEntry(
         projectId=projectId,
         experimentName=experimentName,
         logMessage=logMessage,
         logDetails=logDetails
     )
-    log(logEntry)
+    logEntry(entry)
 
 
 
 if __name__ == '__main__':
     success = log(
-        projectId = 1,
+        projectId = 2,
         experimentName= "RA_Video_22_NDP",
         logMessage="Starting execution [2]"
     )
