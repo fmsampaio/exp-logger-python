@@ -22,14 +22,7 @@ def log(projectId, experimentName, logMessage, logDetails=""):
         logMessage=logMessage,
         logDetails=logDetails
     )
-    jsonData = logEntry.toJson()
-
-    response = requests.post(
-        url = f'{BASE_API_URL}/log_entries/',
-        data = jsonData
-    )
-
-    return response.status_code == 201
+    log(logEntry)
 
 
 
